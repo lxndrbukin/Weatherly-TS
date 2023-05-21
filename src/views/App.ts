@@ -3,6 +3,7 @@ import { Weather } from '../models/Weather';
 import { Header } from './components/Header';
 import { SearchBar } from './components/SearchBar';
 import { CurrentWeather } from './components/CurrentWeather';
+import { Forecast } from './components/Forecast';
 
 export class App extends View<Weather> {
   regionsMap(): { [key: string]: string; } {
@@ -20,6 +21,7 @@ export class App extends View<Weather> {
     new SearchBar(this.regions.searchBar, this.model).render();
     this.model.on('change', () => {
       new CurrentWeather(this.regions.currentWeather, this.model).render();
+      new Forecast(this.regions.forecast, this.model).render();
     });
   }
 

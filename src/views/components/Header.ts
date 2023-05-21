@@ -4,9 +4,7 @@ import { Weather } from '../../models/Weather';
 export class Header extends View<Weather> {
   template(): string {
     return /*html*/ `
-      <header class='header'>
-        <div class='logo'>Weatherly</div>
-      </header>
+      <div class='logo'>Weatherly</div>
     `;
   }
 }

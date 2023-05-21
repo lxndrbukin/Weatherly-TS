@@ -1,6 +1,6 @@
 import { View } from '../View';
 import { Weather } from '../../models/Weather';
-import { WeatherData } from '../../models/Weather';
+import { WeatherData } from '../../models/interfaces/DataInterfaces';
 
 interface HWP {
   name: string,
