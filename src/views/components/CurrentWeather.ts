@@ -95,13 +95,13 @@ export class CurrentWeather extends View<Weather> {
                   src='${`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}'
                   alt='${weatherData.name}'
                 />
-                <h1 class='city-temp-value'>${weatherData.main.temp}°</h1>
+                <h1 class='city-temp-value'>${Math.round(weatherData.main.temp)}°</h1>
               </div>
               <h3 class='description'>${weatherData.weather[0].description}</h3>
             </div>
             <div class='info-right'>
               <h4 class='feel'>
-                Feels like ${weatherData.main.feels_like}°
+                Feels like ${Math.round(weatherData.main.feels_like)}°
               </h4>
               <div class='temps'>${this.renderTemps().join('')}</div>
               ${this.renderHWP().join('')}

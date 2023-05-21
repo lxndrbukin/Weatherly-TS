@@ -60,10 +60,14 @@ body {
 }
 
 /* SEARCH BAR */
+.searchbar-wrapper {
+  width: 100%;
+  max-width: var(--standard-width);
+}
+
 .searchbar {
   display: flex;
   width: 100%;
-  max-width: var(--standard-width);
   position: relative;
   box-sizing: border-box;
 }
@@ -110,10 +114,19 @@ body {
   left: calc(var(--spacing-lg) * 0.6);
 }
 
-/* CURRENT WEATHER */
-.current-weather {
+/* CONTAINER */
+.container {
   width: 100%;
   max-width: var(--standard-width);
+}
+
+/* CURRENT WEATHER */
+.current-weather-wrapper {
+  width: 100%;
+}
+
+.current-weather {
+  width: 100%;
   background-color: var(--white);
   border-radius: 20px;
   margin: var(--spacing-lg) 0;

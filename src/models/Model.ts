@@ -36,7 +36,7 @@ export class Model {
 
   fetch(dataType: string, city: string): void {
     this.sync.fetch(dataType, city).then((res: AxiosResponse): void => {
-      this.set(dataType, res.data);
+      this.set(`${dataType}Data`, res.data);
     });
   }
 }

@@ -31,7 +31,7 @@ export class SearchBar extends View<Weather> {
         <button class='geolocation'>
           <i class='fa-solid fa-location-crosshairs'></i>
         </button>
-        <form>
+        <form class='search-input-form'>
           <input autocomplete='off' type='text' name='search' placeholder='Enter city name' />
           <button class='search' type='submit'>
             <i class='fa-solid fa-magnifying-glass'></i>
