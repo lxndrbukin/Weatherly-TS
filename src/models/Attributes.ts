@@ -7,7 +7,7 @@ export class Attributes<T extends object> {
 
   set(attr: string, update: T): void {
     Object.assign(this.data[attr], update);
-    console.log(this.data);
+    console.log(this.data[attr]);
   }
 
   getAll(): T {

@@ -20,8 +20,7 @@ export class SearchBar extends View<Weather> {
       if (input) {
         const cityName = input.value;
         this.model.fetch(WeatherDataType.Weather, cityName);
-        this.model.fetch(WeatherDataType.Forecast, cityName);
-        this.model.trigger('change');
+        // this.model.fetch(WeatherDataType.Forecast, cityName);
       }
     }
   };

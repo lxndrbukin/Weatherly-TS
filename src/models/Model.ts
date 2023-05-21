@@ -31,6 +31,7 @@ export class Model {
 
   set(attr: string, update: object) {
     this.attributes.set(attr, update);
+    this.events.trigger('change');
   }
 
   fetch(dataType: string, city: string): void {
