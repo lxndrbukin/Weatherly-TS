@@ -6,7 +6,7 @@ interface ModelAttributes {
 }
 
 interface Sync {
-  fetch(data: string, city: string): AxiosPromise;
+  fetch(data: string, location: string | {lat: number, lon: number}): AxiosPromise;
 }
 
 interface Events {
@@ -34,8 +34,8 @@ export class Model {
     this.events.trigger('change');
   }
 
-  fetch(dataType: string, city: string): void {
-    this.sync.fetch(dataType, city).then((res: AxiosResponse): void => {
+  fetch(dataType: string, location: string | {lat: number, lon: number}): void {
+    this.sync.fetch(dataType, location).then((res: AxiosResponse): void => {
       this.set(`${dataType}Data`, res.data);
     });
   }

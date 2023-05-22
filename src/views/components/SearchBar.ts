@@ -9,8 +9,18 @@ enum WeatherDataType {
 export class SearchBar extends View<Weather> {
   eventsMap(): { [key: string]: (e?: Event) => void; } {
     return {
-      'submit:form': this.onFormSubmit
+      'submit:form': this.onFormSubmit,
+      'click:.geolocation': this.onClick
     };
+  }
+
+  onClick = (): void => {
+    const successCallback = async (position) => {
+      const { latitude, longitude } = await position.coords;
+      this.model.fetch(WeatherDataType.Weather, {lat: latitude, lon: longitude})
+    };
+
+    navigator.geolocation.getCurrentPosition(successCallback);
   }
 
   onFormSubmit = (e?: Event): void => {
