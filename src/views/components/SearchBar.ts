@@ -17,11 +17,12 @@ export class SearchBar extends View<Weather> {
   onClick = (): void => {
     const successCallback = async (position) => {
       const { latitude, longitude } = await position.coords;
-      this.model.fetch(WeatherDataType.Weather, {lat: latitude, lon: longitude})
+      this.model.fetch(WeatherDataType.Weather, { lat: latitude, lon: longitude });
+      this.model.fetch(WeatherDataType.Forecast, { lat: latitude, lon: longitude });
     };
 
     navigator.geolocation.getCurrentPosition(successCallback);
-  }
+  };
 
   onFormSubmit = (e?: Event): void => {
     if (e) {
