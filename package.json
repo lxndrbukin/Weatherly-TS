@@ -2,15 +2,18 @@
   "name": "weatherlyts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "dist/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel ./*.html",
+    "predeploy": "rm -rf dist && parcel build ./*.html --public-url \"https://lxndrbukin.github.io/weatherlyts\"",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "gh-pages": "^5.0.0"
   },
   "devDependencies": {
     "buffer": "^5.7.1"
